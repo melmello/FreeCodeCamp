@@ -34,16 +34,17 @@ def draw_bar_plot():
     df_bar["year"] = df.index.year
     df_bar["month"] = df.index.month_name()
 
+
     with sns.axes_style("white"):
         fig, ax = plt.subplots(figsize=(15, 10))
     # Draw bar plot
     ax = sns.barplot(x='year', y='value', hue='month', data=df_bar)
+    ax.legend(labels=
+        ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November',
+         'December'], title='Months')
     ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
-    ax.legend(
-        ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November',
-         'December'], title='Months')
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')

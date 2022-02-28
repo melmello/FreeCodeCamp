@@ -50,7 +50,7 @@ def draw_heat_map():
 
     # Set up the matplotlib figure
     with sns.axes_style("white"):
-        fig, ax = plt.subplots(figsize=(7, 5))
+        fig, ax = plt.subplots(figsize=(15, 10))
 
     # Draw the heatmap with 'sns.heatmap()'
     ax = sns.heatmap(corr, mask=mask, square=True, annot=True, fmt=".1f")
